@@ -1,0 +1,30 @@
+.model
+.code
+
+main proc
+    
+    mov ax, 0b800h   ;'0b800h 에 0을 써야 오류 X 
+    mov ds, ax     ;ds : 데이터 세그먼트                       
+    
+    mov cl,'L'
+    mov ch,00111001b ; 바탕색 글자색 4비트씩 8비트   
+                  
+    mov bx, 60
+    mov [bx], cx
+     
+    mov cl,'H'          
+    mov ch,00111011b  
+    
+    mov bx, 62
+    mov [bx], cx 
+    
+    mov cl,'D'
+    mov ch,00011100b
+    
+    mov bx, 64
+    mov [bx], cx
+    
+    
+    
+    main endp
+end main
