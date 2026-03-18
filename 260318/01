@@ -1,0 +1,16 @@
+.model small
+.data
+.code
+main proc
+   ;5 * (7+1) - 6 을 계산하는 프로그램을 작성하기           
+    mov bl,7
+    ;mov cl, 1
+    ;add al,cl  
+    mul bl 
+    mov al,5  
+    mov bl    ;al = 40
+    sub al,6  ;al = 34        
+    mov cx, ax    
+    
+    main endp
+end main
