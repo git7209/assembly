@@ -1,0 +1,27 @@
+.model small
+.data 
+msg1 db 'happy$'
+msg2 db 'Birthday to you$'          ; msg == 메세지 
+.code                               ; db == 디파인 바이트 
+main proc      
+   
+mov ax,@data
+mov ds,ax   ;주소 일치(원하는 위치)
+    
+mov ah, 9   ;서비스 번호(문자열 출력) 
+lea dx,msg1 ;변수 주소값 로딩
+int 21h 
+
+mov ah,2     ;한글자 출력
+mov dl,0ah   ;new line
+int 21h
+
+mov dl, 0dh  ;캐리지 리턴
+int 21h            
+                           ;*********시험에 나올듯 ?
+mov ah,9      ;서비스 번호 
+mov dx,msg2
+int 21h
+                         
+    main endp
+end main                                                
