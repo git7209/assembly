@@ -1,0 +1,22 @@
+.model small
+.data
+.code
+main proc
+    ; 사칙연산을 이용하여 (10*10)-(10/5)+1
+    ;식을 프로그램으로 작성하기 
+     
+     mov ax, 10
+     ;mov bx, 10
+     ;mul bx
+     mul ax           ;ax=100
+     mov bx,ax       
+     
+     mov ax, 10    ;ax = 2                            
+     mov cx, 5
+     div cx                           
+      
+     sub bx,ax; 100-2
+     inc bx  
+                         
+    main endp
+end main                                                
